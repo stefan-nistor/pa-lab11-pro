@@ -1,7 +1,6 @@
 package com.example.lab11.services;
 
 import com.example.lab11.dtos.PersonDTO;
-import com.example.lab11.entities.Person;
 
 import java.util.List;
 
@@ -13,8 +12,8 @@ public interface PersonService {
 
     void addPerson(PersonDTO personDTO);
 
-    List<Person> getAllPersons();
+    List<PersonDTO> getAllPersons();
 
-    List<Person> getKMostPopular(Integer count);
+    List<PersonDTO> getKMostPopular(Integer count);
 
 }
