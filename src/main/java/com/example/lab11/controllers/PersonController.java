@@ -37,4 +37,10 @@ public class PersonController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
+
+    @GetMapping(name = "/popularity}")
+    public ResponseEntity<?> getFirstMostPopular(@RequestParam Integer count) {
+        return ResponseEntity.ok(personService.getKMostPopular(count));
+    }
+
 }

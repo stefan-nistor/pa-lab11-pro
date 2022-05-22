@@ -16,4 +16,9 @@ public class ExceptionHandlerAdvice {
     public ResponseEntity<?> personNotFound(PersonNotFoundException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
+
+    @ExceptionHandler(PersonAlreadyExistsException.class)
+    public ResponseEntity<?> personAlreadyExists(PersonAlreadyExistsException e) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+    }
 }

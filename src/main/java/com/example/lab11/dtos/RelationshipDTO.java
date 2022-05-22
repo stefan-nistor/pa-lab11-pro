@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RelationshipDTO {
 
-    Long id;
-    String person1;
-    String person2;
+    private Long id;
+    private String person1;
+    private String person2;
 
 }
