@@ -8,18 +8,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(name = "/relationships")
 public class RelationshipController {
 
     @Autowired
     RelationshipService relationshipService;
 
-    @GetMapping
+    @GetMapping("/relationships")
     public ResponseEntity<?> getAllRelationships(){
         return ResponseEntity.ok(relationshipService.getAllRelationships());
     }
 
-    @PostMapping
+    @PostMapping("/relationships")
     public ResponseEntity<?> addRelationship(@RequestBody RelationshipDTO relationshipDTO) {
         relationshipService.addRelationship(relationshipDTO);
         return ResponseEntity.status(HttpStatus.CREATED).build();
