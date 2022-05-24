@@ -19,10 +19,10 @@ public class Person {
     private Long id;
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "person1", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "person1", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Relationship> friends = new LinkedList<>();
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "person2", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "person2", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Relationship> friendsOf = new LinkedList<>();
 
 }

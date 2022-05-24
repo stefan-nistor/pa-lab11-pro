@@ -21,6 +21,11 @@ public class RelationshipServiceImpl implements RelationshipService {
     @Autowired
     PersonRepo personRepo;
 
+    /**
+     * Get a list of all relationships
+     *
+     * @return {@link List} of {@link RelationshipDTO}
+     */
     @Override
     public List<RelationshipDTO> getAllRelationships() {
         var relationships = relationshipRepo.findAll();
@@ -33,6 +38,11 @@ public class RelationshipServiceImpl implements RelationshipService {
         return result;
     }
 
+    /**
+     * Add a relationship between 2 persons
+     *
+     * @param relationshipDTO {@link RelationshipDTO} containing names of two persons
+     */
     @Override
     public void addRelationship(RelationshipDTO relationshipDTO) {
         var relationship = relationshipRepo.findRelationshipByNames(relationshipDTO.getPerson1(), relationshipDTO.getPerson2());
